@@ -1,0 +1,18 @@
+{
+    "root": true,
+    "extends": "standard",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+    },
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "plugins": [
+      'html'
+    ],
+    "rules": {
+        "semi": 1
+    }
+}
