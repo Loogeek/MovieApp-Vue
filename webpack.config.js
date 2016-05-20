@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -9,7 +10,7 @@ module.exports = {
     filename: 'build.js'
   },
   resolveLoader: {
-    root: path.join(__dirname, 'node_modules'),
+    root: path.join(__dirname, 'node_modules')
   },
   module: {
     preLoaders: [
@@ -52,10 +53,21 @@ module.exports = {
       }
     ]
   },
+  // vue: {
+  //   loaders: {
+  //     css: ExtractTextPlugin.extract('css'),
+  //     sass: ExtractTextPlugin.extract('css!sass-loader')
+  //   }
+  // },
   devServer: {
     historyApiFallback: true,
     noInfo: true
   },
+  plugins: [
+    new ExtractTextPlugin('[name].css', {
+      allChunks: true
+    })
+  ],
   devtool: '#eval-source-map'
 }
 
