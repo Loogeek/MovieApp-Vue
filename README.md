@@ -21,14 +21,14 @@
 项目整体效果
 -------
 <div>
-  <img src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/1.png" width="300px"/>
-  <img src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/3.png" width="300px"/>
-  <img src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/5.png" width="300px"/>
+  <img src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/1.png" width="240px"/>
+  <img src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/3.png" width="240px"/>
+  <img src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/4.png" width="240px"/>
 </div>
 <div>
-  <img src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/6.png" width="300px"/>
-  <img src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/7.png" width="300px"/>
-  <img src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/2.png" width="300px"/>
+  <img src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/5.png" width="240px"/>
+  <img src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/6.png" width="240px"/>
+  <img src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/2.png" width="240px"/>
 </div>
 
 运行
