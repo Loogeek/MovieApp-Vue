@@ -21,12 +21,12 @@
 项目整体效果
 -------
 <div style="margin-bottom: 40px; width: 700px; margin: 0 auto;">
-  <img style="width: 300px; " src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/1.png" alt="首页"/>
-  <img style="width: 300px; " src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/2.png" alt="菜单栏"/>
+  <img style="width: 45% " src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/1.png" alt="首页"/>
+  <img style="width: 45% " src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/2.png" alt="菜单栏"/>
 </div>
 <div style="margin-bottom: 40px; width: 700px; margin: 0 auto;">
-  <img style="width: 300px; " src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/3.png" alt="详情页"/>
-  <img style="width: 300px; " src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/4.png" alt="列表页"/>
+  <img style="width: 45% " src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/3.png" alt="详情页"/>
+  <img style="width: 45% " src="https://raw.githubusercontent.com/Loogeek/Project_Imgs/master/MovieApp-Vue/4.png" alt="列表页"/>
 </div>
 
 运行
