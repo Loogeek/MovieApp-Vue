@@ -13,12 +13,12 @@
     left: 0px;
     top: 0px;
     padding-top: 44px;
-    // min-height: 100vh;
     background: #f8f8f8;
   }
 
   .ui-panel {
     background: #fff;
+
     h2 {
       position: relative;
     }
@@ -29,16 +29,14 @@
       top: 0px;
     }
   }
-
+  // 组件加载和移除时动画
   .fade-transition {
     &.fade-enter {
       animation: fade-enter 400ms forwards;
-      z-index: 2;
     }
 
     &.fade-leave {
       animation: fade-leave 400ms forwards;
-      z-index: 1;
     }
   }
 
@@ -59,7 +57,7 @@
       opacity: 0;
     }
   }
-
+  // 电影详情和导演展示页面图片区域样式
   .banner {
     position: relative;
     overflow: hidden;
@@ -68,11 +66,11 @@
     .blur {
       height: 220px;
       width: 120%;
-      margin-left: -10%;
-      margin-top: -20px;
-      filter: blur(5px);
+      filter: blur(3px);
       background-position: top;
       background-size: cover;
+      margin-left: -10%;
+      margin-top: -20px;
 
       &:before {
         content: '';
@@ -121,7 +119,7 @@
       }
     }
   }
-
+  // 列表样式
   .list-one {
     .ui-list-img, .ui-list-img img {
       width: 60px;

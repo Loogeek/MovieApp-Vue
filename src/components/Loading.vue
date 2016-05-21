@@ -6,13 +6,16 @@
 
 <script>
   export default {
-    props: ['show', 'near']
+    name: 'Loading',
+    props: {
+      show: Boolean,
+      near: String
+    }
   }
 </script>
 
 <style lang="sass" scoped>
 	.ui-loading-block {
-
 		&.top {
 			.ui-loading-cnt {
 				margin-top: -200px;
@@ -22,7 +25,6 @@
 		.ui-loading-cnt {
 			width: 57px;
 			height: 57px;
-
 		}
 
 		.ui-loading-bright {

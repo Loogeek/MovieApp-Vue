@@ -1,18 +1,19 @@
 <template lang="jade">
   div.page(v-if="!$loadingRouteData", transition="fade")
     div.wrapper(:class="{'nav-slide' : isSlide}")
-      header-bar(:title="title", left="menu", right="search", @nav-slide="handleNavSlide")
+      // 顶部左侧菜单栏事件，当点击菜单选项时header-bar组件将isSlide通
+      // 过nav-slide事件冒泡到当前组件，并触发handleNavSlide事件
+      header-bar(:title="title", left="menu", @nav-slide="handleNavSlide")
+      // 首页显示的电影分类按index先后顺序，即正在上映、即将上映、Top250顺序排序显示
       section.ui-panel(v-for="dataitem of resData | orderBy 'index'")
         h2.ui-arrowlink(v-link="{name:'list', params: {type: dataitem.name}}") {{ dataitem.title }}
           span.ui-panel-subtitle {{ dataitem.total }}个
         ul.ui-grid-trisect
           li(v-for="item of dataitem.list", v-link="{name: 'show', params:{id: item.id}}")
-            div.ui-grid-trisect-img(v-if = "dataitem.title === '豆瓣电影北美票房榜'")
-              img(:src="item.subject.images.large", :alt="item.subject.title")
-              p.ui-nowrap {{ item.subject.title }}
-            div.ui-grid-trisect-img(v-else)
+            div.ui-grid-trisect-img
               img(:src="item.images.large", :alt="item.title")
               p.ui-nowrap {{ item.title }}
+  // 左侧菜单栏，通过navHidden属性对其显示或隐藏
   nav.navdrawer(v-show="navHidden")
     article
       header.navdrawer-header
@@ -48,8 +49,8 @@ export default {
       title: '电影',
       resData: [],
       hotwords: [],
-      isSlide: false,
-      navHidden: false
+      isSlide: false,           // 获取子组件上传的菜单栏显示或隐藏状态
+      navHidden: false          // 经过延迟处理后将isSlide赋值给navHidden属性
     }
   },
   route: {
@@ -61,14 +62,14 @@ export default {
         this.$loadingRouteData = false
         return
       }
-      // 正在热映、即将上映、Top250、北美票房榜
+      // 正在热映、即将上映、Top250
       const ResourcesURI = ['in_theaters', 'coming_soon', 'top250']
       // 数据请求
       ResourcesURI.forEach((item, index) => {
         this.$http.jsonp('http://api.douban.com/v2/movie/' + item, {count: 6}).then((response) => {
           // 存储搜索结果
           this.resData.push({
-            index: index,                      // 循环显示时通过orderBy该字段按顺序显示
+            index: index,                      // 通过orderBy按请求顺序显示
             name: item,
             title: response.data.title.split('-')[0],
             total: response.data.total,
@@ -93,11 +94,13 @@ export default {
       })
     }
   },
+  // 监控isSlide属性变化时执行delaySlide函数
   watch: {
     'isSlide': 'delaySlide'
   },
   methods: {
     delaySlide () {
+      // 当点击隐藏菜单栏选项时经过500ms才隐藏左侧菜单栏
       if (!this.isSlide) {
         window.setTimeout(() => {
           this.navHidden = this.isSlide
@@ -106,6 +109,7 @@ export default {
         this.navHidden = this.isSlide
       }
     },
+    // 处理子组件上传的菜单栏显示或隐藏状态
     handleNavSlide (isSlide) {
       this.isSlide = isSlide
     }

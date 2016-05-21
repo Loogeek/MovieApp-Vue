@@ -4,15 +4,14 @@
   "author": "Loogeek <xiaolong3956@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot --host 0.0.0.0 --port 5000",
+    "dev": "webpack-dev-server --inline --hot --host 0.0.0.0 --port 3000",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
     "babel-runtime": "^6.0.0",
     "vue": "^1.0.0",
     "vue-resource": "^0.7.0",
-    "vue-router": "^0.7.13",
-    "vuex": "^0.6.3"
+    "vue-router": "^0.7.13"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",

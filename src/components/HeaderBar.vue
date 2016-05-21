@@ -6,7 +6,7 @@
       i
       i
       i
-    button.btn.search.right(v-if="right == 'search'", v-link="{name: 'search'}")
+    button.btn.search.right(v-link="{name: 'search'}")
       i.ui-icon-search
     h1 {{ title }}
 </template>

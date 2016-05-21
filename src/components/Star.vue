@@ -9,7 +9,11 @@
 
 <script>
   export default {
-    props: ['score', 'size']
+    name: 'Star',
+    props: {
+      score: Number,
+      size: String
+    }
   }
 </script>
 

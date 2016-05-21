@@ -1,11 +1,11 @@
 var path = require('path')
 var webpack = require('webpack')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
+// var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './dist/'),
     publicPath: '/dist/',
     filename: 'build.js'
   },
@@ -63,11 +63,11 @@ module.exports = {
     historyApiFallback: true,
     noInfo: true
   },
-  plugins: [
-    new ExtractTextPlugin('[name].css', {
-      allChunks: true
-    })
-  ],
+  // plugins: [
+  //   new ExtractTextPlugin('style.css', {
+  //     allChunks: true
+  //   })
+  // ],
   devtool: '#eval-source-map'
 }
 

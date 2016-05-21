@@ -14,7 +14,7 @@
         span.ui-label(v-for="hotword of hotwords", v-link="{name: 'show', params: {id: hotword.id}}", track-by="$index") {{ hotword.title }}
     div.suggest(v-show="suggests.length")
       ul.ui-list.ui-list-text.ui-list-link.ui-txt-info
-        li.ui-border-b(v-for="suggest of suggests",transition="staggered", stagger="50", track-by="$index", v-link="{name: 'show', params: {id: suggest.id}}") {{ suggest.title }}
+        li.ui-border-b(v-for="suggest of suggests",transition="staggered", track-by="$index", v-link="{name: 'show', params: {id: suggest.id}}") {{ suggest.title }}
   loading(:show="loading", near="top")
 </template>
 
@@ -35,8 +35,8 @@
       this.$els.keywords.focus()
     },
     route: {
-      data (transition) {
-        document.title = this.title
+      data () {
+        // 将sessionStorage中存储的搜索热词取出
         this.hotwords = JSON.parse(sessionStorage.hotwords)
       }
     },
@@ -54,9 +54,11 @@
       }
     },
     methods: {
+      // 取消搜索
       cancel () {
         history.back()
       },
+      // 清空输入框
       clear () {
         this.keywords = ''
         this.$els.keywords.focus()
@@ -89,13 +91,11 @@
 	 	.hot-search {
 	 		background: #fff;
 	 		margin-top: 10px;
-	 		padding-right: 10px;
-	 		padding-bottom: 10px;
+	 		padding: 0 10px 10px 0;
 
 	 		.ui-label {
 				font-size: 14px;
-				margin-left: 10px;
-				margin-top: 10px;
+				margin: 10px 0 0 10px;
 	 		}
 	 	}
 	}
@@ -112,15 +112,15 @@
 			li {
 				padding-right: 10px;
 				transition: all .4s ease;
-			    overflow: hidden;
-			    height: 40px;
-			    padding: 0px;
-			    line-height: 40px;
-			    display: block;
+		    overflow: hidden;
+		    height: 40px;
+		    padding: 0px;
+		    line-height: 40px;
+		    display: block;
 			}
 			.staggered-enter, .staggered-leave {
-			    opacity: 0;
-			    height: 0;
+		    opacity: 0;
+		    height: 0;
 			}
 
 			.staggered-leave {

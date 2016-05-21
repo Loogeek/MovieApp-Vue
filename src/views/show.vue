@@ -1,6 +1,6 @@
 <template lang="jade">
   div.page(v-if="!$loadingRouteData", transition="fade")
-    header-bar(:title="title", left="back", right="search")
+    header-bar(:title="title", left="back")
     div.banner
       div.blur(:style="{backgroundImage: 'url('+ image +')'}")
       div.info
@@ -11,18 +11,16 @@
           p.ui-nowrap
             star(:score="score", size="large")
           p.ui-nowrap 类型: {{ genres.join(' ') }}
-          p.ui-nowrap 主演: {{ genres.join(' ') }}
-            span(v-for="cast of casts") {{cast.name }}
+          p.ui-nowrap 主演:
+            span(v-for="cast of casts") {{ cast.name }}/
           p.ui-nowrap 地区: {{ countries.join(' ') }}
     section.ui-panel.summary
       h2
         a 剧情简介
-        span.ui-panel-subtitle
       div.ui-whitespace.ui-txt-justify.ui-txt-sub.ui-txt-info {{ summary }}
     section.ui-panel.directors
       h2.ui-arrowlink
         a 导演
-        span.ui-panel-subtitle
       div.ui-row.ui-whitespace
         div.ui-col.ui-col-33(v-for="director of directors", v-link="{name: 'director', params: {id: director.id}}")
           img(:src="director.avatars ? director.avatars.large : ''")
@@ -51,9 +49,9 @@
     },
     route: {
       data (transition) {
-        let params = transition.to.params
+        let id = transition.to.params.id
 
-        this.$http.jsonp('http://api.douban.com/v2/movie/subject/' + params.id).then((response) => {
+        this.$http.jsonp('http://api.douban.com/v2/movie/subject/' + id).then((response) => {
           this.title = response.data.title
           this.image = response.data.images.large
           this.genres = response.data.genres

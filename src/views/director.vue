@@ -1,6 +1,6 @@
 <template lang="jade">
   div.page(v-if="!$loadingRouteData", transition="fade")
-    header-bar(:title="title", left="back", right="search")
+    header-bar(:title="title", left="back")
     div.banner
       div.blur(:style="{backgroundImage: 'url('+ image +')'}")
       div.info
