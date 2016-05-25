@@ -2,29 +2,33 @@ export default (router) => {
   router.map({
     '/': {
       name: 'index',
-      component: view('index')
+      component: (resolve) => {
+        require(['./views/index.vue'], resolve)
+      }
     },
     '/list/:type': {
       name: 'list',
-      component: view('list')
+      component: (resolve) => {
+        require(['./views/list.vue'], resolve)
+      }
     },
     '/show/:id': {
       name: 'show',
-      component: view('show')
+      component: (resolve) => {
+        require(['./views/show.vue'], resolve)
+      }
     },
     '/director/:id': {
       name: 'director',
-      component: view('director')
+      component: (resolve) => {
+        require(['./views/director.vue'], resolve)
+      }
     },
     '/search': {
       name: 'search',
-      component: view('search')
+      component: (resolve) => {
+        require(['./views/search.vue'], resolve)
+      }
     }
   })
-
-  function view (name) {
-    return (resolve) => {
-      require(['./views/' + name + '.vue'], resolve)
-    }
-  }
 }
