@@ -14,7 +14,6 @@
       h2
         a 作品
         span.ui-panel-subtitle {{ works.length }} 个
-      //- list(:lists="works")
       ul.ui-list.ui-list-link.ui-border-tb.list-one
         li.ui-border-t(v-for="work of works", v-link="{name: 'show', params: {id: work.subject.id}}", track-by="subject.id")
           div.ui-list-img
@@ -33,7 +32,6 @@
   import HeaderBar from '../components/HeaderBar.vue'
   import Loading from '../components/Loading.vue'
   import Star from '../components/Star.vue'
-  // import List from '../components/List.vue'
 
   export default {
     data () {
@@ -61,7 +59,6 @@
       HeaderBar,
       Loading,
       Star
-      // List
     }
   }
 </script>

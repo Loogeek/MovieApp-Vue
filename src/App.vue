@@ -4,7 +4,7 @@
 
 <style lang="sass" score>
   * {
-    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
   }
 
   .page {

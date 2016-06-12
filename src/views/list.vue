@@ -68,7 +68,7 @@
         if (sessionStorage['MovieApp_' + this.type]) {
           this.movieLists = JSON.parse(sessionStorage['MovieApp_' + this.type])
           this.$loadingRouteData = false
-          // 如果数据都请求完毕并保存早movieLists数组中，则取消加载动画并提示加载完成
+          // 如果数据都请求完毕并保存在movieLists数组中，则取消加载动画并提示加载完成
           // 如果数据还未加载完则继续发送请求
           if (this.total <= this.movieLists.length) {
             this.more = false
